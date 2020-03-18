@@ -71,6 +71,18 @@ export const constantRoutes = [
     hidden: true
   },
   {
+    path: '/printers',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/printers/index'),
+        name: 'Printers',
+        meta: { title: 'Принтеры', icon: 'documentation' }
+      }
+    ]
+  },
+  {
     path: '/',
     component: Layout,
     redirect: '/dashboard',

@@ -36,8 +36,8 @@ export default [
       return {
         code: 20000,
         data: {
-          total: 20,
-          'items|20': [{
+          total: 30,
+          'items|30': [{
             order_no: '@guid()',
             timestamp: +Mock.Random.date('T'),
             username: '@name()',

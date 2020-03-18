@@ -1,5 +1,6 @@
 <template>
   <div class="navbar">
+
     <hamburger id="hamburger-container" :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
 
     <breadcrumb id="breadcrumb-container" class="breadcrumb-container" />
@@ -19,8 +20,10 @@
       </template>
 
       <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
+
         <div class="avatar-wrapper">
-          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
+          <el-row> <div>{{ user.employee.last_name }} {{ user.employee.first_name }}</div></el-row>
+          <img :src="avatar" class="user-avatar">
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown">
@@ -67,7 +70,8 @@ export default {
     ...mapGetters([
       'sidebar',
       'avatar',
-      'device'
+      'device',
+      'user'
     ])
   },
   methods: {
